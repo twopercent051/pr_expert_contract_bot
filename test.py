@@ -1,4 +1,6 @@
-from num2words import num2words
+a = [1, 2, 3, 4]
 
-price = num2words("42010", lang='ru')
-print(price)
+b = a.reverse()
+
+print(b)
+
