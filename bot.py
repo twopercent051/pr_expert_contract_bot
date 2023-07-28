@@ -12,7 +12,7 @@ from create_bot import bot, dp, scheduler, logger, register_global_middlewares, 
 async def main():
     logger.info("Starting bot")
     scheduler_jobs()
-    rds.redis_start()
+    # rds.redis_start()
     dp.include_routers(
         admin_router,
         user_router,
