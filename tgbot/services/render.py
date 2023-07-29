@@ -58,8 +58,8 @@ def cluster_render(doc, data: list):
 
 
 def row_value(row: str) -> str:
-    if len(row.split("||")) == 2:
-        return str(row.split("||")[1].strip())
+    if len(row.split("//")) == 2:
+        return str(row.split("//")[1].strip())
     else:
         return ""
 
