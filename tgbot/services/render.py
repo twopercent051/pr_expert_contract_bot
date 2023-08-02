@@ -127,7 +127,7 @@ def data_to_json(template: str, data_str: str) -> dict:
             data_dict["REGION"] = row_value(rows[19])
             data_dict["VAC"] = vac_text
         if template == "razovaya":
-            data_dict["DURATION"] = duration_dict(row_value(rows[17]))
+            data_dict["DURATION"] = duration_dict[row_value(rows[17])]
             data_dict["REGION"] = row_value(rows[18])
         if template == "klasterizaciya":
             request_cost_int = row_value(rows[18])
@@ -135,7 +135,7 @@ def data_to_json(template: str, data_str: str) -> dict:
                 return None
             request_cost_text = num2words(request_cost_int, lang='ru')
             request_cost = f"{request_cost_int} ({request_cost_text})"
-            data_dict["DURATION"] = duration_dict(row_value(rows[17]))
+            data_dict["DURATION"] = duration_dict[row_value(rows[17])]
             data_dict["REQUEST_COST"] = request_cost
             cluster_data = row_value(rows[19]).split(",")
             # data_dict["THEMES"] = "new row\none more row"
