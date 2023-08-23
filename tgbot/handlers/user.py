@@ -19,7 +19,7 @@ async def template_start(user_id: int | str):
     await bot.send_message(chat_id=user_id, text=text, reply_markup=kb)
 
 
-@router.message(Command('start'))
+@router.message(Command("start"))
 async def template_type(message: Message):
     await template_start(user_id=message.from_user.id)
 

@@ -58,8 +58,8 @@ def cluster_render(doc, data: list):
 
 
 def row_value(row: str) -> str:
-    if len(row.split("//")) == 2:
-        return str(row.split("//")[1].strip())
+    if len(row.split("//")) > 1:
+        return "".join(str(row.split("//")[1].strip()))
     else:
         return ""
 
@@ -138,8 +138,6 @@ def data_to_json(template: str, data_str: str) -> dict:
             data_dict["DURATION"] = duration_dict[row_value(rows[17])]
             data_dict["REQUEST_COST"] = request_cost
             cluster_data = row_value(rows[19]).split(",")
-            # data_dict["THEMES"] = "new row\none more row"
-            # cluster_render()
     except IndexError as ex:
         print(ex)
         return None
